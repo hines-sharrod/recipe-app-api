@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      # . means run inside the current directory
+      context: .
+    ports:
+      # maps the 8000 port on the local server to the container
+      - "8000:8000"
+    volumes:
+      # syncs code running the project to the container (hot reload basically)
+      - "./app:/app"
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0.8000"
