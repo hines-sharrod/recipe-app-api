@@ -5,6 +5,8 @@ services:
     build:
       # . means run inside the current directory
       context: .
+      args:
+        - DEV=true
     ports:
       # maps the 8000 port on the local server to the container
       - "8000:8000"
